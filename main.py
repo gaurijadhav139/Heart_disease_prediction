@@ -18,7 +18,7 @@ def model_prediction():
     data = request.form 
     print(data)
 
-    load_model = pickle.load(open(r'C:\Users\gauri\Documents\Heart_project\artifacts\model.pkl','rb'))
+    load_model = pickle.load(open('model.pkl','rb'))
     print(load_model)
 
     user_data = [[float(data['age']),
@@ -52,4 +52,4 @@ def model_prediction():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0',debug=False,port=8080)
